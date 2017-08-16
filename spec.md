@@ -5,11 +5,11 @@ My Rails project will be based on a CRM app where a sales team can keep track of
 
 Through this app, users will be able to convert their leads into customers which will then contribute to their sales total.
 
-Ultimately, the goal of this is to see which user has had the highest earnings.
+Ultimately, the goal of this is to see which user has had the highest revenue.
 
 Forms for- Create new user, lead, and company(maybe?)
 
-ActiveRecord Scope Method- Methods for User's with the highest earnings
+ActiveRecord Scope Method- Methods for User's with the highest revenue
 
 Specs:
 - [x] Using Ruby on Rails for the project
