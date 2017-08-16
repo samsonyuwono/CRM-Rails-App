@@ -3,6 +3,10 @@ CRM-Rails-App
 Summary
 My Rails project will be based on a CRM app where a sales team can keep track of their leads through the accounts they're managing.
 
+A user will first log on or sign up for an account.
+
+From their home screen portal they keep track of the companies they are selling to. Each company has a lot of leads which a user can add or assign to.
+
 Through this app, users will be able to convert their leads into customers which will then contribute to their sales total.
 
 Ultimately, the goal of this is to see which user has had the highest revenue.

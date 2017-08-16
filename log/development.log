@@ -101,3 +101,11 @@ Migrating to DeviseCreateUsers (20170816205141)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+Started GET "/" for 127.0.0.1 at 2017-08-16 17:46:53 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/samsonyuwono/.rvm/gems/ruby-2.3.1/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/samsonyuwono/.rvm/gems/ruby-2.3.1/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (15.0ms)
+Completed 200 OK in 71ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
