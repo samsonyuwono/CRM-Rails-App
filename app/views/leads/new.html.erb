@@ -1,1 +1,12 @@
 <h3>Add a new lead/contact</h3>
+
+<%= form_for @lead do |f| %>
+
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <p>Drop down menu for company here</p>
+
+  Check this box for customer:<%= f.check_box :contact %><br>
+  <%= f.submit "Create lead" %>
+<% end %>
