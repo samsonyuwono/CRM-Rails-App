@@ -17,3 +17,4 @@ A lead form could have a select box that assigns a lead to the user who's managi
 8/17 EOD
 Sign in page goes to Index for all user's companies
 Each company has clickable link that shows all leads belonging to company
+Round out seed file

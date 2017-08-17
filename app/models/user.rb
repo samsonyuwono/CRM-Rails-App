@@ -6,12 +6,12 @@ class User < ApplicationRecord
 
     has_many :companies
     has_many :leads, :through=> :companies
-
-    def total_revenue
-      @total= 0
-      self.company.each do |i|
-        @total += i.self.revenue
-    end
-    @total
-  end
+  #
+  #   def total_revenue
+  #     @total= 0
+  #     self.company.each do |i|
+  #       @total += i.self.revenue
+  #   end
+  #   @total
+  # end
 end

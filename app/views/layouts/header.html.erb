@@ -1,5 +1,5 @@
+
 <nav class="">
-    <b><%= link_to "Home Page", home_path %> </b>|
       <% if user_signed_in? %>
       <b>Signed in as <%=current_user.email%></b> |
       <b> <%= link_to "Sign out", destroy_user_session_path, :method => "delete"%></b> |
