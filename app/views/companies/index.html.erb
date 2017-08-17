@@ -1,0 +1,7 @@
+<h2>Your accounts and in-progress accounts</h2>
+
+<% @companies.each do |company| %>
+<%= link_to company.name, company_path(@company) %>
+<%end%>
+
+<%= link_to "Add Company", new_company_path %>
