@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :leads
   resources :companies
 
-  root 'static#home'
-  
+  root 'static#home', as: 'home'
+
 end
