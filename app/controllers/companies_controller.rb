@@ -15,7 +15,7 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:attraction).permit(:name, :revenue, :nausea_rating, :customer)
+    params.require(:company).permit(:name, :revenue, :customer)
   end
 
 end
