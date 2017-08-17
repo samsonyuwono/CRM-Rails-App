@@ -2,6 +2,8 @@
 
 <% @companies.each do |company| %>
 <%= link_to company.name, company_path(@company) %>
+<%= link_to company.name "Edit Company", edit_company_path(@company) %>
+
 <%end%>
 
 <%= link_to "Add Company", new_company_path %>
