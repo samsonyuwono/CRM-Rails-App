@@ -1,11 +1,19 @@
 <h1>Welcome to Fake SalesForce</h1>
 
-<% if user_signed_in? %>
+<h2>Your accounts and in-progress accounts</h2>
+<% if @companies != nil %>
+<% @companies.each do |company| %>
+<%= link_to company.name, company_path(company) %>
+<%end%>
+<%end%>
 
-  <h2>Your accounts and in-progress accounts</h2>
-  <% else %>
+<%= link_to "Add Company", new_company_path %>
 
+
+
+
+
+<% if !user_signed_in? %>
 <%= link_to "Sign up", new_user_registration_path %> <br></br>
 <%= link_to "Sign in", new_user_session_path %>
-
 <% end %>
