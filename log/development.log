@@ -4233,3 +4233,161 @@ Processing by StaticController#home as HTML
 Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.2ms)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-17 11:12:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JgZoRmEesjByLmgmZzSevfwu/JJ+18FO8voi0hiyhUJ3+TxdvpYpN9T9u7zV0E/iKbBnCJS0XGA2G09WPDcL3Q=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 62ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-17 11:12:25 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (6.8ms)
+Completed 200 OK in 273ms (Views: 270.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-17 11:12:34 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-17 11:12:38 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (32.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 80ms (Views: 76.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-17 11:12:40 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zze1Qp+hC9A40GRHD6JD4D7IOgFpmc+xryliJ5xsAyeBqexSa4MOHjnN4h9mp3V0iD8yv08j10ssl7CNgtfKEQ==", "user"=>{"email"=>"888@888.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "888@888.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-17 15:12:40.439571"], ["last_sign_in_at", "2017-08-17 15:09:36.730264"], ["sign_in_count", 3], ["updated_at", "2017-08-17 15:12:40.440632"], ["id", 3]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 165ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-17 11:12:40 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-17 11:29:44 -0400
+
+ArgumentError - '[:index, :show, :new, :edit]' is not a supported controller name. This can lead to potential routing problems. See http://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use:
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:312:in `block (2 levels) in check_controller_and_action'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:357:in `translate_controller'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:308:in `block in check_controller_and_action'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:323:in `check_part'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:307:in `check_controller_and_action'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:252:in `normalize_options!'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:116:in `initialize'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:69:in `build'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1919:in `add_route'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1891:in `decomposed_match'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1860:in `block in map_match'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1858:in `map_match'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1597:in `match'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:730:in `map_method'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:691:in `get'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1443:in `block (3 levels) in resources'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1477:in `block (2 levels) in collection'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1820:in `path_scope'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1476:in `block in collection'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1700:in `with_scope_level'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1475:in `collection'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1442:in `block (2 levels) in resources'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1708:in `block in resource_scope'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:881:in `controller'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1708:in `resource_scope'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1437:in `block in resources'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1700:in `with_scope_level'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1435:in `resources'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1642:in `block in apply_common_behavior_for'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1642:in `apply_common_behavior_for'
+  actionpack (5.1.3) lib/action_dispatch/routing/mapper.rb:1431:in `resources'
+  config/routes.rb:4:in `block in <top (required)>'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:426:in `eval_block'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:408:in `draw'
+  config/routes.rb:1:in `<top (required)>'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:286:in `block in load'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:258:in `load_dependency'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:286:in `load'
+  railties (5.1.3) lib/rails/application/routes_reloader.rb:55:in `block in load_paths'
+  railties (5.1.3) lib/rails/application/routes_reloader.rb:55:in `load_paths'
+  railties (5.1.3) lib/rails/application/routes_reloader.rb:18:in `reload!'
+  railties (5.1.3) lib/rails/application/routes_reloader.rb:41:in `block in updater'
+  activesupport (5.1.3) lib/active_support/file_update_checker.rb:81:in `execute'
+  railties (5.1.3) lib/rails/application/routes_reloader.rb:25:in `execute'
+  railties (5.1.3) lib/rails/application/finisher.rb:141:in `block (2 levels) in <module:Finisher>'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:601:in `block (2 levels) in default_terminator'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:600:in `block in default_terminator'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:198:in `block in halting'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:507:in `invoke_before'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:130:in `run_callbacks'
+  activesupport (5.1.3) lib/active_support/execution_wrapper.rb:108:in `run!'
+  activesupport (5.1.3) lib/active_support/reloader.rb:113:in `run!'
+  activesupport (5.1.3) lib/active_support/execution_wrapper.rb:70:in `block in run!'
+  activesupport (5.1.3) lib/active_support/execution_wrapper.rb:67:in `run!'
+  activesupport (5.1.3) lib/active_support/reloader.rb:59:in `run!'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:10:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/0d4385606dbb5af9/variables" for 127.0.0.1 at 2017-08-17 11:29:45 -0400
+Started GET "/" for 127.0.0.1 at 2017-08-17 11:29:53 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered static/home.html.erb within layouts/application (45.6ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 121ms (Views: 117.4ms | ActiveRecord: 3.1ms)
+
+
