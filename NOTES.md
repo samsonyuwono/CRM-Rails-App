@@ -14,7 +14,6 @@ Scope a Nested Attribute Form
 
 A lead form could have a select box that assigns a lead to the user who's managing the company's account
 
-8/17 EOD
-Sign in page goes to Index for all user's companies
-Each company has clickable link that shows all leads belonging to company
-Round out seed file
+8/18 EOD
+Make sure all models are working- Copy tests and use console
+Get name field for devise working again

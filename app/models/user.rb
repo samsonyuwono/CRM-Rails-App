@@ -7,8 +7,8 @@ class User < ApplicationRecord
     has_many :companies
     has_many :leads, :through=> :companies
 
-    validates :name, presence: true
-  #
+    validates :username, presence: true
+
   #   def total_revenue
   #     @total= 0
   #     self.company.each do |i|
