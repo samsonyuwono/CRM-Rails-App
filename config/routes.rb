@@ -5,5 +5,11 @@ Rails.application.routes.draw do
 
   root 'static#home', as: 'home'
 
+  authenticated :user do
+    root to: 'companies#index', as: :authenticated_root
+  end
+
   post 'companies' => 'companies#create'
+
+
 end
