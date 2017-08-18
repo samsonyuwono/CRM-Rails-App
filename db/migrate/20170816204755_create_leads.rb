@@ -3,7 +3,6 @@ class CreateLeads < ActiveRecord::Migration[5.1]
     create_table :leads do |t|
       t.string :name
       t.boolean :contact
-      t.integer :user_id
       t.integer :company_id
 
       t.timestamps
