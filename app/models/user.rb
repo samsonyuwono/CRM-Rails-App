@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
     has_many :companies
-    has_many :leads, :through=> :companies
+    has_many :leads, through: :companies
 
     validates :username, presence: true
 
