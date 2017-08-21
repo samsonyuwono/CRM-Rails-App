@@ -1,10 +1,13 @@
 <h2>Your accounts and in-progress accounts</h2>
+<ul>
+  <% @companies.each do |company| %>
+<li> <b><%= link_to company.name, company_path(company) %></b> -
+  <%= link_to "Edit", edit_company_path(company)%>
+</li>
+  <%end%>
 
-<% @companies.each do |c| %>
-<b><%= link_to c.name, companies_path(@company) %></b> - <p>Edit Company</p>
-<br>
+</ul>
 
-<%end%>
 
-<%= link_to "Add Company", new_company_path %>
+<%= link_to "Add Company", new_company_path %> <br>
 <%= link_to "Add a lead/contact", new_lead_path %>
