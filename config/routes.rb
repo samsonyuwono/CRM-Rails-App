@@ -5,5 +5,4 @@ Rails.application.routes.draw do
 
   root 'static#home', as: 'home'
 
-  post 'companies' => 'companies#create'
 end
