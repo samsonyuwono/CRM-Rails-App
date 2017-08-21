@@ -9,7 +9,9 @@ class LeadsController < ApplicationController
   end
 
   private
+
   def company_params
-    params.require(:lead).permit(:name)
+    params.require(:lead).permit(:name, :contact)
   end
+
 end

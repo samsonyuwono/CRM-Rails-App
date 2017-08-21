@@ -18,17 +18,22 @@ class CompaniesController < ApplicationController
  end
 
  def show
-   @company = Company.find(params[:id])
+   if current_company
+     render :show
+   end
  end
 
  def edit
-   @company = Company.find(params[:id])
+   if current_company
+     render :edit
+   end
  end
 
  def update
-   @company = Company.find(params[:id])
+   if current_company
     @company.update(company_params)
     redirect_to company_path
+  end
  end
 
  private

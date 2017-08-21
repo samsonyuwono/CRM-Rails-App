@@ -4,9 +4,11 @@
 
 <ul>
 
-  <h4><%= @company.name%>'s Leads</h4>
+  <h4><%= @company.name%>'s Leads/Contacts</h4>
   <% @company.leads.each do |l| %>
- <li><%= link_to l.name, lead_path(l) %></li>
+ <li><%= link_to l.name, lead_path(l) %> | Main Point of Contact?: <%= l.contact %>
+   -
+   <%= link_to 'Edit Lead', edit_lead_path(l) %></li>
   <%end %>
 
 </ul>
