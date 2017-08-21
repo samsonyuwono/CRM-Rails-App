@@ -22,9 +22,13 @@ class CompaniesController < ApplicationController
  end
 
  def edit
+   @company = Company.find(params[:id])
  end
 
  def update
+   @company = Company.find(params[:id])
+    @company.update(company_params)
+    redirect_to company_path
  end
 
  private
@@ -33,4 +37,7 @@ class CompaniesController < ApplicationController
    params.require(:company).permit(:name, :revenue, :customer)
  end
 
+ def current_company
+   @company = Company.find(params[:id])
+ end
 end

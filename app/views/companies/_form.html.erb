@@ -1,0 +1,13 @@
+<%= form_for @company do |f| %>
+
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :revenue, "Revenue(in thousands):" %>
+  <%= f.number_field :revenue %><br />
+
+  Check this box for customer:<%= f.check_box :customer %><br />
+
+  <%= f.submit %>
+
+  <% end %>

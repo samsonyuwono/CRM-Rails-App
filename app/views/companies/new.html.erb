@@ -1,17 +1,6 @@
 <h2>New Company Form</h2>
 
-<%= form_for (@company) do |f| %>
-  <%= f.label :name %>:
-  <%= f.text_field :name %><br />
-
-  <%= f.label :revenue, "Revenue(in thousands):" %>
-  <%= f.number_field :revenue %><br />
-
-
-  Check this box for customer:<%= f.check_box :customer %><br>
-  <%= f.submit "Create Company" %>
-<% end %>
-
+<%= render 'form' %>
 
 
 <!-- <%= link_to "Add a lead/contact", new_lead_path %> -->
