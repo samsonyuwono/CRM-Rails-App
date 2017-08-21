@@ -1,8 +1,14 @@
 <h3><%=@company.name%></h3>
-<p>Revenue- 100/p>
-<p>Customer? Y/N</p>
+<p>Revenue: <%= @company.revenue %></p>
+<p>Customer: <%= @company.customer %></p>
 
+<ul>
 
-<h6>Leads</h6>
-<p>lead.name</p>
-<p>lead.name</p>
+  <h4><%= @company.name%>'s Leads</h4>
+  <% @company.leads.each do |l| %>
+ <li><%= link_to l.name, lead_path(l) %></li>
+  <%end %>
+
+</ul>
+
+  <%= button_to 'Add New Lead Company', new_lead_path %>
