@@ -1,13 +1,23 @@
 class LeadsController < ApplicationController
 
-  def index
-    @leads= Lead.all
-  end
 
   def show
     @lead = Lead.find(params[:id])
   end
 
+  def new
+    @lead= Lead.new
+  end
+
+  def create
+    @lead = Lead.new(lead_params)
+    if @lead.save
+      redirect_to lead_path(@lead)
+    else
+      render :new
+    end
+  end
+  
   def edit
     if current_lead
       render :edit
