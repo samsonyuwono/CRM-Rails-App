@@ -8,10 +8,28 @@ class LeadsController < ApplicationController
     @lead = Lead.find(params[:id])
   end
 
+  def edit
+    if current_lead
+      render :edit
+    end
+  end
+
+  def update
+    if current_lead
+      @lead.update(lead_params)
+      redirect_to lead_path
+    end
+  end
+
   private
 
-  def company_params
+  def lead_params
     params.require(:lead).permit(:name, :contact)
   end
+
+  def current_lead
+    @lead = Lead.find(params[:id])
+  end
+
 
 end

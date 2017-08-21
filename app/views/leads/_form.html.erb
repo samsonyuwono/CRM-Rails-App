@@ -1,0 +1,10 @@
+<%= form_for @lead do |f| %>
+
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  Check this box for contact:<%= f.check_box :contact %><br />
+
+  <%= f.submit %>
+
+  <% end %>
