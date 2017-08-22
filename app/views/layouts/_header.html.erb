@@ -2,8 +2,8 @@
     <b><%= link_to "Home", home_path %> </b>|
       <% if user_signed_in? %>
       <b>Signed in as <%=current_user.email%></b> |
-        <b><%= link_to "My accounts/contacts", companies_path %> </b>|
-        <b><%=  link_to 'Edit Profile',edit_user_registration_path  %></b> |
+      <b><%= link_to "My accounts/contacts", companies_path %> </b>|
+      <b><%=  link_to 'Edit Profile',edit_user_registration_path  %></b> |
       <b> <%= link_to "Sign out", destroy_user_session_path, :method => "delete"%></b> |
       <% end %>
 </nav>
