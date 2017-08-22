@@ -19,7 +19,8 @@ A lead form could have a select box that assigns a lead to the user who's managi
 
 - Get form to add company to work and link lead to company
 - create scope method
-- create Omniauth gem for Gmail
+- create Omniauth gem for Gmail - Installed FB Oauth, sort of working?
 
+Google info
 395436286329-r0rjdjmvh6eo8f2anos94f4ii7b7dvms.apps.googleusercontent.com
-SQwOHPEYPM7AuU6iRGh07xnP Secret
+SQwOHPEYPM7AuU6iRGh07xnP
