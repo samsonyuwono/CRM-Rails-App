@@ -10,7 +10,7 @@ class CompaniesController < ApplicationController
  end
 
  def create
-   @company = Company.find(params[:user_id]).companies.build(company_params)
+   @company = Company.find_by(params[:user_id]).companies.build(company_params)
    if @company.save
      redirect_to company_path(@company)
    else
