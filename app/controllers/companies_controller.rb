@@ -3,6 +3,7 @@ class CompaniesController < ApplicationController
 
   def index
    @companies = current_user.companies
+   binding.pry
  end
 
  def new
@@ -10,7 +11,7 @@ class CompaniesController < ApplicationController
  end
 
  def create
-   @company = User.find_by(params[:id]).companies.build(company_params)
+   @company = User.find_by(params[:user_id]).companies.build(company_params)
    if @company.save
      redirect_to company_path(@company)
    else
@@ -37,6 +38,13 @@ class CompaniesController < ApplicationController
   end
  end
 
+ def destroy
+   if current_company
+    @company.delete
+    redirect_to companies_path
+  end
+end
+
  private
 
  def company_params
@@ -46,4 +54,5 @@ class CompaniesController < ApplicationController
  def current_company
    @company = Company.find(params[:id])
  end
+
 end
