@@ -14,12 +14,18 @@ Scope a Nested Attribute Form
 
 A lead form could have a select box that assigns a lead to the user who's managing the company's account
 
-8/21 EOD
-- Make sure Add forms for lead/company are working- Controller/Views?
+8/23 EOD
+- Make sure Add forms for lead are working- Controller/Views?
+- Make show page for Lead
+- Add delete to Lead show page
 
-- Get form to add company to work and link lead to company
+
+- Get form to add company to work and link lead to company- Drop down to add lead
+
+Stretch
+- create nested forms and method
 - create scope method
-- create Omniauth gem for Gmail 
+- create Omniauth gem for Gmail
 
 Google info
 395436286329-r0rjdjmvh6eo8f2anos94f4ii7b7dvms.apps.googleusercontent.com

@@ -1,10 +1,5 @@
 class LeadsController < ApplicationController
 
-
-  def show
-    @lead = Lead.find(params[:id])
-  end
-
   def new
     @lead= Lead.new
   end
@@ -15,6 +10,12 @@ class LeadsController < ApplicationController
       redirect_to lead_path(@lead)
     else
       render :new
+    end
+  end
+
+  def show
+    if current_lead
+      render :show
     end
   end
 
@@ -31,6 +32,13 @@ class LeadsController < ApplicationController
     end
   end
 
+  def destroy
+    if current_lead
+      @lead.delete
+      redirect_to companies_path
+    end
+  end
+
   private
 
   def lead_params
@@ -38,7 +46,7 @@ class LeadsController < ApplicationController
   end
 
   def current_lead
-    @lead = Lead.find(params[:id])
+    @lead = Lead.find_by(id: params[:id])
   end
 
 
