@@ -6,7 +6,22 @@
   <%= f.label :revenue, "Revenue(in thousands):" %>
   <%= f.number_field :revenue %><br />
 
+
+
   Check this box for customer:<%= f.check_box :customer %><br />
+
+  <% f.fields_for :leads, @company.leads.build  do |i| %>
+    <%= i.label :name %>
+    <%= i.text_field :name %>
+
+    <%= i.label :email %>
+    <%= i.text_field :email %>
+
+    <%= i.label :phone_number %>
+    <%= i.text_field :phone_number %>
+
+    Check this box for contact:<%= f.check_box :contact %><br />
+
 
   <%= f.submit %>
 
