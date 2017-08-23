@@ -1,9 +1,8 @@
 class CompaniesController < ApplicationController
-  before_action :authenticate_user!
 
   def index
    @companies = current_user.companies
-   binding.pry
+  #  binding.pry
  end
 
  def new
@@ -11,7 +10,7 @@ class CompaniesController < ApplicationController
  end
 
  def create
-   @company = User.find_by(params[:user_id]).companies.build(company_params)
+   @company = User.find(current_user.id).companies.build(company_params)
    if @company.save
      redirect_to company_path(@company)
    else
