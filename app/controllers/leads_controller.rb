@@ -17,7 +17,7 @@ class LeadsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     if current_lead
       render :edit
@@ -34,7 +34,7 @@ class LeadsController < ApplicationController
   private
 
   def lead_params
-    params.require(:lead).permit(:name, :contact)
+    params.require(:lead).permit(:name, :contact, :email, :phone_number)
   end
 
   def current_lead
