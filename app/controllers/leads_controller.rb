@@ -2,12 +2,13 @@ class LeadsController < ApplicationController
     before_action :authenticate_user!
 
   def new
-    @lead= Lead.new
+    @lead = @company.leads.build
   end
 
   def create
-    @lead = Lead.new(lead_params)
-    # @lead.company_ids = params[:company_id]
+    @company= Company.find_by(params[:id])
+    @lead= @company.leads.build(lead_params)
+    @company.save
     binding.pry
     if @lead.save
       redirect_to lead_path(@lead)
@@ -51,9 +52,7 @@ class LeadsController < ApplicationController
 
   def current_lead
     @company= Company.find_by(id: :lead_id)
-    # @w= Company.find_by(id: 10)
-    # @lead = @company.leads.find(params[:id])
- #@w.leads.find(11)
+    @lead = @company.leads.find(params[:id])
   end
 
 

@@ -2,11 +2,11 @@ class CompaniesController < ApplicationController
 
   def index
    @companies = current_user.companies
-  #  binding.pry
  end
 
  def new
    @company= Company.new
+   @company.leads.build
  end
 
  def create
