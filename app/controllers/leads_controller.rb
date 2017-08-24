@@ -19,7 +19,6 @@ class LeadsController < ApplicationController
 
   def show
     if current_lead
-      @lead = @company.leads.find(params[:id])
       render :show
     end
   end
@@ -51,8 +50,7 @@ class LeadsController < ApplicationController
   end
 
   def current_lead
-    @company= Company.find_by(id: :lead_id)
-    @lead = @company.leads.find(params[:id])
+    @lead = Lead.find_by(id: params[:id])
   end
 
 

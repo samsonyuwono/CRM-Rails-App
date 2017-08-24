@@ -47944,3 +47944,1570 @@ Processing by CompaniesController#show as HTML
 Completed 200 OK in 92ms (Views: 89.6ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 19:44:54 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (2.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (5.1ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (92.6ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (35.6ms)
+Completed 200 OK in 667ms (Views: 598.2ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/leads/19/edit" for 127.0.0.1 at 2017-08-23 19:45:01 -0400
+Processing by LeadsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms)
+
+
+
+NoMethodError - undefined method `leads' for nil:NilClass:
+  app/controllers/leads_controller.rb:55:in `current_lead'
+  app/controllers/leads_controller.rb:28:in `edit'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/497841cba09f38fd/variables" for 127.0.0.1 at 2017-08-23 19:45:01 -0400
+Started GET "/leads/19/edit" for 127.0.0.1 at 2017-08-23 19:46:23 -0400
+Processing by LeadsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.0ms)
+
+
+
+NameError - uninitialized constant LeadsController::Item:
+  activesupport (5.1.3) lib/active_support/dependencies.rb:549:in `load_missing_constant'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:202:in `const_missing'
+  app/controllers/leads_controller.rb:54:in `current_lead'
+  app/controllers/leads_controller.rb:28:in `edit'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/ce60595d58d37e0d/variables" for 127.0.0.1 at 2017-08-23 19:46:23 -0400
+Started GET "/leads/19/edit" for 127.0.0.1 at 2017-08-23 19:46:33 -0400
+Processing by LeadsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/edit.html.erb within layouts/application
+  Rendered leads/_form.html.erb (70.8ms)
+  Rendered leads/edit.html.erb within layouts/application (75.6ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 178ms (Views: 119.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-08-23 19:46:39 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (30.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 101ms (Views: 79.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 19:46:42 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (0.4ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (20.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.2ms)
+Completed 200 OK in 76ms (Views: 71.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/leads/19/edit" for 127.0.0.1 at 2017-08-23 19:46:43 -0400
+Processing by LeadsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.1ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/edit.html.erb within layouts/application
+  Rendered leads/_form.html.erb (3.9ms)
+  Rendered leads/edit.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 65ms (Views: 61.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/leads/19/edit" for 127.0.0.1 at 2017-08-23 19:46:48 -0400
+Processing by LeadsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/edit.html.erb within layouts/application
+  Rendered leads/_form.html.erb (5.0ms)
+  Rendered leads/edit.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 85ms (Views: 79.6ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/leads/19/edit" for 127.0.0.1 at 2017-08-23 19:46:59 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/leads/19/edit"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/leads/19/edit" for 127.0.0.1 at 2017-08-23 19:48:38 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/leads/19/edit"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/companies" for 127.0.0.1 at 2017-08-23 19:48:41 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 141ms (Views: 90.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 19:48:43 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (0.4ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (421.2ms)
+Completed 500 Internal Server Error in 443ms (ActiveRecord: 1.4ms)
+
+
+
+NameError - undefined local variable or method `lead_path' for #<#<Class:0x007f9c18721e18>:0x007f9c1a533168>
+Did you mean?  leads_path:
+  app/views/companies/show.html.erb:9:in `block in _app_views_companies_show_html_erb__3338017102257679256_70154216640200'
+  activerecord (5.1.3) lib/active_record/relation/delegation.rb:39:in `each'
+  app/views/companies/show.html.erb:8:in `_app_views_companies_show_html_erb__3338017102257679256_70154216640200'
+  actionview (5.1.3) lib/action_view/template.rb:157:in `block in render'
+  activesupport (5.1.3) lib/active_support/notifications.rb:168:in `instrument'
+  actionview (5.1.3) lib/action_view/template.rb:352:in `instrument_render_template'
+  actionview (5.1.3) lib/action_view/template.rb:155:in `render'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (5.1.3) lib/action_view/rendering.rb:103:in `_render_template'
+  actionpack (5.1.3) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (5.1.3) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+  actionpack (5.1.3) lib/abstract_controller/rendering.rb:24:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:36:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/samsonyuwono/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/companies_controller.rb:23:in `show'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/67c4c87f84e4b16a/variables" for 127.0.0.1 at 2017-08-23 19:48:43 -0400
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 19:49:48 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (249.4ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `lead_path' for #<#<Class:0x007f9c18721e18>:0x007f9c126d2418>
+Did you mean?  leads_path:
+  app/views/companies/show.html.erb:9:in `block in _app_views_companies_show_html_erb__3338017102257679256_70154161095600'
+  activerecord (5.1.3) lib/active_record/relation/delegation.rb:39:in `each'
+  app/views/companies/show.html.erb:8:in `_app_views_companies_show_html_erb__3338017102257679256_70154161095600'
+  actionview (5.1.3) lib/action_view/template.rb:157:in `block in render'
+  activesupport (5.1.3) lib/active_support/notifications.rb:168:in `instrument'
+  actionview (5.1.3) lib/action_view/template.rb:352:in `instrument_render_template'
+  actionview (5.1.3) lib/action_view/template.rb:155:in `render'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (5.1.3) lib/action_view/rendering.rb:103:in `_render_template'
+  actionpack (5.1.3) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (5.1.3) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+  actionpack (5.1.3) lib/abstract_controller/rendering.rb:24:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:36:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/samsonyuwono/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/companies_controller.rb:23:in `show'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/1f4fe1d07df77b65/variables" for 127.0.0.1 at 2017-08-23 19:49:49 -0400
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 19:49:58 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (0.4ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.4ms)
+Completed 200 OK in 85ms (Views: 82.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/leads" for 127.0.0.1 at 2017-08-23 19:50:15 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for LeadsController:
+  actionpack (5.1.3) lib/abstract_controller/base.rb:119:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/497f275846223f35/variables" for 127.0.0.1 at 2017-08-23 19:50:16 -0400
+Started GET "/companies" for 127.0.0.1 at 2017-08-23 19:50:23 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+Started GET "/leads/19/edit" for 127.0.0.1 at 2017-08-23 19:50:23 -0400
+  Rendered companies/index.html.erb within layouts/application (4.8ms)
+Processing by LeadsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 76ms (Views: 63.1ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.7ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/edit.html.erb within layouts/application
+  Rendered leads/_form.html.erb (4.4ms)
+  Rendered leads/edit.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 140ms (Views: 123.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/leads/19/edit" for 127.0.0.1 at 2017-08-23 19:50:24 -0400
+Processing by LeadsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.1ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/edit.html.erb within layouts/application
+  Rendered leads/_form.html.erb (3.7ms)
+  Rendered leads/edit.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 105ms (Views: 102.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-08-23 19:50:30 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 48ms (Views: 41.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 19:50:31 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (169.5ms)
+Completed 500 Internal Server Error in 188ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `lead_path' for #<#<Class:0x007f9c18721e18>:0x007f9c18fb1c90>
+Did you mean?  leads_path:
+  app/views/companies/show.html.erb:9:in `block in _app_views_companies_show_html_erb__3338017102257679256_70154205365340'
+  activerecord (5.1.3) lib/active_record/relation/delegation.rb:39:in `each'
+  app/views/companies/show.html.erb:8:in `_app_views_companies_show_html_erb__3338017102257679256_70154205365340'
+  actionview (5.1.3) lib/action_view/template.rb:157:in `block in render'
+  activesupport (5.1.3) lib/active_support/notifications.rb:168:in `instrument'
+  actionview (5.1.3) lib/action_view/template.rb:352:in `instrument_render_template'
+  actionview (5.1.3) lib/action_view/template.rb:155:in `render'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (5.1.3) lib/action_view/rendering.rb:103:in `_render_template'
+  actionpack (5.1.3) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (5.1.3) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+  actionpack (5.1.3) lib/abstract_controller/rendering.rb:24:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:36:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/samsonyuwono/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/companies_controller.rb:23:in `show'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/d816a9350ee64937/variables" for 127.0.0.1 at 2017-08-23 19:50:32 -0400
+Started GET "/companies" for 127.0.0.1 at 2017-08-23 19:58:46 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (2.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (41.8ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 589ms (Views: 505.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 19:58:48 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (2.5ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (95.5ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 3.5ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"leads", :id=>nil}, missing required keys: [:id]:
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:246:in `raise_generation_error'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:216:in `block in optimized_helper'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:231:in `block in parameterize_args'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:228:in `parameterize_args'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:215:in `optimized_helper'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:205:in `call'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:325:in `block (2 levels) in define_url_helper'
+  app/views/companies/show.html.erb:9:in `block in _app_views_companies_show_html_erb__215022926239150863_70181857510320'
+  activerecord (5.1.3) lib/active_record/relation/delegation.rb:39:in `each'
+  app/views/companies/show.html.erb:8:in `_app_views_companies_show_html_erb__215022926239150863_70181857510320'
+  actionview (5.1.3) lib/action_view/template.rb:157:in `block in render'
+  activesupport (5.1.3) lib/active_support/notifications.rb:168:in `instrument'
+  actionview (5.1.3) lib/action_view/template.rb:352:in `instrument_render_template'
+  actionview (5.1.3) lib/action_view/template.rb:155:in `render'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (5.1.3) lib/action_view/rendering.rb:103:in `_render_template'
+  actionpack (5.1.3) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (5.1.3) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+  actionpack (5.1.3) lib/abstract_controller/rendering.rb:24:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:36:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/samsonyuwono/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/companies_controller.rb:23:in `show'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/53528ef1de2ad830/variables" for 127.0.0.1 at 2017-08-23 19:58:49 -0400
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 19:59:05 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (12.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 113ms (Views: 108.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/leads/19" for 127.0.0.1 at 2017-08-23 19:59:09 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.4ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.5ms)
+
+
+
+NoMethodError - undefined method `leads' for nil:NilClass:
+  app/controllers/leads_controller.rb:22:in `show'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/0e0c49614dcdb5e1/variables" for 127.0.0.1 at 2017-08-23 19:59:09 -0400
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 19:59:22 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (0.4ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 162ms (Views: 159.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/leads/19" for 127.0.0.1 at 2017-08-23 19:59:25 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 3.0ms)
+
+
+
+NoMethodError - undefined method `leads' for nil:NilClass:
+  app/controllers/leads_controller.rb:22:in `show'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/5d19fd8a881e6602/variables" for 127.0.0.1 at 2017-08-23 19:59:25 -0400
+Started GET "/leads/19" for 127.0.0.1 at 2017-08-23 20:00:03 -0400
+
+SyntaxError - syntax error, unexpected keyword_end, expecting end-of-input:
+  app/controllers/leads_controller.rb:57:in `'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:476:in `block in load_file'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:661:in `new_constants_in'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:475:in `load_file'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:374:in `block in require_or_load'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:36:in `block in load_interlock'
+  activesupport (5.1.3) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+  activesupport (5.1.3) lib/active_support/concurrency/share_lock.rb:149:in `exclusive'
+  activesupport (5.1.3) lib/active_support/dependencies/interlock.rb:11:in `loading'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:36:in `load_interlock'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:357:in `require_or_load'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:510:in `load_missing_constant'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:202:in `const_missing'
+  activesupport (5.1.3) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+  activesupport (5.1.3) lib/active_support/inflector/methods.rb:267:in `constantize'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:582:in `get'
+  activesupport (5.1.3) lib/active_support/dependencies.rb:613:in `constantize'
+  actionpack (5.1.3) lib/action_dispatch/http/request.rb:82:in `controller_class'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/2bfe226b309c5c4c/variables" for 127.0.0.1 at 2017-08-23 20:00:03 -0400
+Started GET "/leads/19" for 127.0.0.1 at 2017-08-23 20:00:28 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.8ms)
+
+
+
+NoMethodError - undefined method `leads' for nil:NilClass:
+  app/controllers/leads_controller.rb:21:in `show'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/a686eed164c5e61b/variables" for 127.0.0.1 at 2017-08-23 20:00:28 -0400
+Started GET "/leads/19" for 127.0.0.1 at 2017-08-23 20:00:38 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (2.0ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 5.0ms)
+
+
+
+NoMethodError - undefined method `lead' for nil:NilClass:
+  app/views/leads/show.html.erb:1:in `_app_views_leads_show_html_erb___1637297644938420463_70181861789500'
+  actionview (5.1.3) lib/action_view/template.rb:157:in `block in render'
+  activesupport (5.1.3) lib/active_support/notifications.rb:168:in `instrument'
+  actionview (5.1.3) lib/action_view/template.rb:352:in `instrument_render_template'
+  actionview (5.1.3) lib/action_view/template.rb:155:in `render'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (5.1.3) lib/action_view/rendering.rb:103:in `_render_template'
+  actionpack (5.1.3) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (5.1.3) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+  actionpack (5.1.3) lib/abstract_controller/rendering.rb:24:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:36:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/samsonyuwono/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/leads_controller.rb:22:in `show'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/ce61473653400be9/variables" for 127.0.0.1 at 2017-08-23 20:00:40 -0400
+Started GET "/leads/19" for 127.0.0.1 at 2017-08-23 20:02:01 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.1ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+
+
+NoMethodError - undefined method `leads' for nil:NilClass:
+  app/views/leads/show.html.erb:1:in `_app_views_leads_show_html_erb___1637297644938420463_70181896931300'
+  actionview (5.1.3) lib/action_view/template.rb:157:in `block in render'
+  activesupport (5.1.3) lib/active_support/notifications.rb:168:in `instrument'
+  actionview (5.1.3) lib/action_view/template.rb:352:in `instrument_render_template'
+  actionview (5.1.3) lib/action_view/template.rb:155:in `render'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (5.1.3) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (5.1.3) lib/action_view/rendering.rb:103:in `_render_template'
+  actionpack (5.1.3) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (5.1.3) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+  actionpack (5.1.3) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+  actionpack (5.1.3) lib/abstract_controller/rendering.rb:24:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:36:in `render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/samsonyuwono/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (5.1.3) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/leads_controller.rb:22:in `show'
+  actionpack (5.1.3) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.3) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.3) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.3) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.3) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.3) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+  omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.3) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/dac0530560422f29/variables" for 127.0.0.1 at 2017-08-23 20:02:01 -0400
+Started GET "/leads/19" for 127.0.0.1 at 2017-08-23 20:02:13 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 83ms (Views: 79.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-08-23 20:02:22 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (2.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (39.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 101ms (Views: 81.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 20:02:23 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (5.1ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (33.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.3ms)
+Completed 200 OK in 76ms (Views: 66.6ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/leads/17" for 127.0.0.1 at 2017-08-23 20:02:24 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/leads/16" for 127.0.0.1 at 2017-08-23 20:02:28 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (1.0ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 52ms (Views: 43.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/leads/14" for 127.0.0.1 at 2017-08-23 20:02:30 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 58ms (Views: 51.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/leads/17" for 127.0.0.1 at 2017-08-23 20:03:20 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 61ms (Views: 54.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/leads/16" for 127.0.0.1 at 2017-08-23 20:03:26 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.1ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 65ms (Views: 60.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/leads/17" for 127.0.0.1 at 2017-08-23 20:03:33 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 76ms (Views: 50.7ms | ActiveRecord: 0.5ms)
+
+

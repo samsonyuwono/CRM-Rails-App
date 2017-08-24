@@ -6,7 +6,7 @@
 
   <h4><%= @company.name%>'s Leads/Contacts</h4>
   <% @company.leads.each do |l| %>
- <li><b> <%= link_to l.name, lead_path %> </b>|
+ <li><b> <%= link_to l.name, lead_path(l) %> </b>|
    <b>Main Point of Contact?:</b> <%= l.contact %>|
    <b>Phone Number:</b> <%= l.phone_number %>|
    <b>Email:</b><%= l.email %> -
