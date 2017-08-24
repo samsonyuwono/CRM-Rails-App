@@ -6,7 +6,6 @@ class CompaniesController < ApplicationController
 
  def new
    @company= Company.new
-   @company.leads.build
  end
 
  def create

@@ -6,15 +6,13 @@
 
   <h4><%= @company.name%>'s Leads/Contacts</h4>
   <% @company.leads.each do |l| %>
- <li><b> <%= link_to l.name, lead_path(l) %> </b>|
+ <li><b> <%= link_to l.name, company_lead_path(l) %> </b>|
    <b>Main Point of Contact?:</b> <%= l.contact %>|
-   <b>Phone Number:</b> <%= l.phone_number %>|
-   <b>Email:</b><%= l.email %> -
-   <%= link_to 'Edit Lead', edit_lead_path(l) %></li>
+   <%= link_to 'Edit Lead', edit_company_lead_path(l) %></li>
   <%end %>
 
 
 </ul>
+<%= link_to "Add a lead/contact", new_company_lead_path(@company) %>
 
-  <%= link_to 'Add a lead/contact', new_lead_path %>
 <%= link_to 'Delete Company', company_path(@company), method: :delete %>

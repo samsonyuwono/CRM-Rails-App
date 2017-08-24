@@ -1,4 +1,5 @@
-<%= form_for :leads do |f| %>
+<%= form_for @lead  do |f| %>
+ <%= f.hidden_field :company_ids %>
 
   <%= f.label :name %>:
   <%= f.text_field :name %><br />
