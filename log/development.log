@@ -49511,3 +49511,80 @@ Processing by LeadsController#show as HTML
 Completed 200 OK in 76ms (Views: 50.7ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/companies" for 127.0.0.1 at 2017-08-23 20:23:59 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (2.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (44.8ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 645ms (Views: 565.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 20:24:00 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (2.6ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (76.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 113ms (Views: 107.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/leads/19" for 127.0.0.1 at 2017-08-23 20:24:03 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.3ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 94ms (Views: 58.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/leads/19" for 127.0.0.1 at 2017-08-23 20:24:11 -0400
+Processing by LeadsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering leads/show.html.erb within layouts/application
+  Rendered leads/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 89ms (Views: 83.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/leads/19" for 127.0.0.1 at 2017-08-23 20:24:14 -0400
+Processing by LeadsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eQIw0gmjL3H+TwfM8G8Nk9ZRpA06xfWCv7bLDV14W+XyyI9zmxlw+vJVYngzVm0ph5myOwno+lOBkNKBPpz89g==", "id"=>"19"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLead Load (0.1ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" WHERE "leads"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (19.5ms)[0m  [1m[31mDELETE FROM "leads" WHERE "leads"."id" = ?[0m  [["id", 19]]
+Redirected to http://localhost:3000/companies
+Completed 302 Found in 24ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-08-23 20:24:14 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered companies/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 72ms (Views: 67.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/companies/13" for 127.0.0.1 at 2017-08-23 20:24:15 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLead Load (0.3ms)[0m  [1m[34mSELECT "leads".* FROM "leads" INNER JOIN "company_leads" ON "leads"."id" = "company_leads"."lead_id" WHERE "company_leads"."company_id" = ?[0m  [["company_id", 13]]
+  Rendered companies/show.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 87ms (Views: 84.4ms | ActiveRecord: 0.8ms)
+
+

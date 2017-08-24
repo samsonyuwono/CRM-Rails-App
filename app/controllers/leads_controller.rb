@@ -9,7 +9,6 @@ class LeadsController < ApplicationController
     @company= Company.find_by(params[:id])
     @lead= @company.leads.build(lead_params)
     @company.save
-    binding.pry
     if @lead.save
       redirect_to lead_path(@lead)
     else
