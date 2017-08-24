@@ -26,7 +26,3 @@ Stretch
 - create nested forms and method
 - create scope method
 - create Omniauth gem for Gmail
-
-Google info
-395436286329-r0rjdjmvh6eo8f2anos94f4ii7b7dvms.apps.googleusercontent.com
-SQwOHPEYPM7AuU6iRGh07xnP

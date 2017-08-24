@@ -5,12 +5,11 @@ class LeadsController < ApplicationController
     @leads = Lead.all
   end
   def new
-    @company_lead= Lead.new
+    @lead= Lead.new
   end
 
   def create
     @company = Company.find(params[:company_id])
-    binding.pry
     @lead = Lead.find_or_initialize_by(company: @company, user: current_user)
     if @lead.save
       redirect_to company_lead_path(@company)
