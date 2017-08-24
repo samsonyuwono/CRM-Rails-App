@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
 
+
   def index
    @companies = current_user.companies
  end

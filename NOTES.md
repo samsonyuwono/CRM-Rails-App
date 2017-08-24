@@ -14,10 +14,8 @@ Scope a Nested Attribute Form
 
 A lead form could have a select box that assigns a lead to the user who's managing the company's account
 
-8/23 EOD
+8/24 EOD
 - Make sure Add forms for lead are working- Controller/Views?
-- Make show page for Lead and make it work
-- Add delete to Lead show page
 - Make sure lead controllers are working
 
 - Add nested lead create to company form

@@ -1,8 +1,11 @@
 class LeadsController < ApplicationController
     before_action :authenticate_user!
 
+  def index
+    @leads = Lead.all
+  end
   def new
-    @lead= Lead.new
+    @company_lead= Lead.new
   end
 
   def create
