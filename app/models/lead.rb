@@ -1,6 +1,5 @@
 class Lead < ApplicationRecord
-
-  belongs_to :company, optional: true
+  belongs_to :company
   has_many :company_leads
   has_many :companies, through: :company_leads
 

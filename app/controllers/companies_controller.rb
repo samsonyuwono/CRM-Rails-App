@@ -7,6 +7,7 @@ class CompaniesController < ApplicationController
 
  def new
    @company= Company.new
+  #  @company.leads.build
  end
 
  def create
@@ -47,8 +48,8 @@ end
  private
 
  def company_params
-   params.require(:company).permit(:name, :revenue, :customer, lead_attributes:
-   [:name, :email, :phone_number, :contact])
+   params.require(:company).permit(:name, :revenue, :customer, :user_id,
+   leads_attributes: [:name, :contact, :phone_number, :email])
  end
 
  def current_company

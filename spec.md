@@ -29,7 +29,7 @@ Specs:
 - [x] Include logout (how e.g. Devise)
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
-- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients)- Created but not working
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients)accepts_nested_attributes_for :items
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
