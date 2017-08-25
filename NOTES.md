@@ -14,14 +14,16 @@ Scope a Nested Attribute Form
 
 A lead form could have a select box that assigns a lead to the user who's managing the company's account
 
-8/24 EOD
-- Make sure Add forms for lead are working- Controller/Views?
+8/25 EOD
+
 - Make sure lead controllers are working
+  - get edit lead to work
 
-- Add nested lead create to company form
+- Get nested lead form to work
 
-- Get form to add company to work and link lead to company- Drop down to add lead
+- Add reasonable validations
+
+- Add validation errors
 
 Stretch
-- create nested forms and method
 - create scope method

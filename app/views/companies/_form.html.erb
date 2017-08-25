@@ -11,7 +11,7 @@
 
   <b>Create lead for Company</b> <br />
 
-  <%= f.fields_for :leads, @company.leads.build do |i| %>
+  <%= f.fields_for :leads, company.leads.build do |i| %>
 
     <%= i.label :name %>:
     <%= i.text_field :name %> <br />

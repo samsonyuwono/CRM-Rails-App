@@ -33,9 +33,10 @@ class LeadsController < ApplicationController
   end
 
   def update
-    if current_lead.current_user
-      @lead.update(lead_params)
+    if @lead.update(lead_params)
       redirect_to company_lead_path(@company)
+    else
+      render :edit
     end
   end
 
