@@ -25,4 +25,3 @@ A lead form could have a select box that assigns a lead to the user who's managi
 Stretch
 - create nested forms and method
 - create scope method
-- create Omniauth gem for Gmail

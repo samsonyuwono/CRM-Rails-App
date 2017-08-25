@@ -1,18 +1,22 @@
 class LeadsController < ApplicationController
     before_action :authenticate_user!
+    before_action :current_company
 
   def index
     @leads = Lead.all
   end
+
   def new
-    @lead= Lead.new
+    @lead= @company.leads.build
   end
 
   def create
-    @company = Company.find(params[:company_id])
-    @lead = Lead.find_or_initialize_by(company: @company, user: current_user)
+    # binding.pry
+    # @company = Company.find(params[:company_id])
+    @lead= @company.leads.build
+    @lead = Lead.new(lead_params)
     if @lead.save
-      redirect_to company_lead_path(@company)
+      redirect_to home_path
     else
       render :new
     end
@@ -52,6 +56,10 @@ class LeadsController < ApplicationController
 
   def current_lead
     @lead = Lead.find_by(id: params[:id])
+  end
+
+  def current_company
+    @company= Company.find_by(id: params[:company_id])
   end
 
 

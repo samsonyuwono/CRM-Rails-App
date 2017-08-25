@@ -47,7 +47,8 @@ end
  private
 
  def company_params
-   params.require(:company).permit(:name, :revenue, :customer)
+   params.require(:company).permit(:name, :revenue, :customer, lead_attributes:
+   [:name, :email, :phone_number, :contact])
  end
 
  def current_company
