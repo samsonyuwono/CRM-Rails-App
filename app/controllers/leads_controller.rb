@@ -11,12 +11,10 @@ class LeadsController < ApplicationController
   end
 
   def create
-    # binding.pry
-    # @company = Company.find(params[:company_id])
-    @lead= @company.leads.build
     @lead = Lead.new(lead_params)
+    @lead.company_ids = params[:company_id]
     if @lead.save
-      redirect_to home_path
+      redirect_to company_path(@company)
     else
       render :new
     end
