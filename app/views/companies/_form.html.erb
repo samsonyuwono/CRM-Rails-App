@@ -10,6 +10,7 @@
   Check this box for customer:<%= f.check_box :customer %><br><br />
 
   <b>Create lead for Company</b> <br />
+  <b>Please fill out all fields for company and lead</b>
 
   <%= f.fields_for :leads, @company.leads.build do |i| %>
 

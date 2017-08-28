@@ -1,7 +1,7 @@
 class LeadsController < ApplicationController
     before_action :authenticate_user!
     before_action :current_company
-    before_action :current_lead
+    before_action :current_lead, only: %i[show edit update destroy]
 
   def index
     @leads = Lead.all
@@ -29,16 +29,17 @@ class LeadsController < ApplicationController
 
   def update
     if @lead.update(lead_params)
-      redirect_to company_lead_path(@company)
+      redirect_to company_path(@company)
     else
       render :edit
     end
   end
 
   def destroy
-    if current_lead
-      @lead.delete
+    if @lead.delete
       redirect_to company_path(@company)
+    else
+      render :show
     end
   end
 

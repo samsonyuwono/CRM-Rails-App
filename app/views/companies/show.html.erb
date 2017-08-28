@@ -7,12 +7,12 @@
   <h4><%= @company.name%>'s Leads/Contacts</h4>
   <% @company.leads.each do |lead| %>
  <li><b> <%= link_to lead.name, company_lead_path(current_user, lead) %> </b>|
-  <b>Contact?:</b> <%= lead.contact  %>|
+  <b>Contact?:</b> <%= lead.contact  %> |
    <%= link_to 'Edit Lead', edit_company_lead_path(lead) %></li>
   <%end %>
 
 
 </ul>
 <%= link_to "Add a lead/contact", new_company_lead_path(@company) %>
-
+<%= link_to "Edit", edit_company_path(@company)%>
 <%= link_to 'Delete Company', company_path(@company), method: :delete %>

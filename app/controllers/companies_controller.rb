@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
-
+before_action :authenticate_user!
+before_action :current_company, only: %i[show update destroy]
 
   def index
    @companies = current_user.companies
@@ -11,38 +12,33 @@ class CompaniesController < ApplicationController
 
  def create
    @company = User.find(current_user.id).companies.build(company_params)
+   binding.pry
    if @company.save
      redirect_to company_path(@company)
    else
-     render :new
+     render :new, notice: "All fields must be filled out"
    end
  end
 
  def show
-   if current_company
-     render :show
-   end
  end
 
  def edit
-   if current_company
-     render :edit
-   end
+
  end
 
  def update
-   if current_company
-    @company.update(company_params)
-    redirect_to company_lead_path
+  if @company.update(company_params)
+    redirect_to @company
+  else
+    render :edit
   end
  end
 
  def destroy
-   if current_company
     @company.delete
     redirect_to companies_path
   end
-end
 
  private
 
@@ -52,7 +48,7 @@ end
  end
 
  def current_company
-   @company = Company.find(params[:id])
+   @company = Company.find_by(id: params[:id])
  end
 
 end

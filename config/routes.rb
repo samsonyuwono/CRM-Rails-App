@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'user/omniauth_callbacks'}
 
   resources :companies do
-    resources :leads, only: [:new, :create, :show, :edit, :destroy]
+    resources :leads, only: [:new, :create, :show, :edit, :update, :destroy]
   end
   resources :leads
 

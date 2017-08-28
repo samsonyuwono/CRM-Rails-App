@@ -18,7 +18,6 @@ A lead form could have a select box that assigns a lead to the user who's managi
 
 - Make sure lead controllers are working
   - get edit lead to work
-  - make sure show page is working for leads
 
 - write custom attribute writer
 
