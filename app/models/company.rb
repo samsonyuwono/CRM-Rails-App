@@ -9,9 +9,8 @@ class Company < ApplicationRecord
 
   accepts_nested_attributes_for :leads
 
-  def self.most_revenue
-    order("revenue desc").first
-  end
+
+
 
 
 end

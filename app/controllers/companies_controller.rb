@@ -27,7 +27,7 @@ before_action :current_company, only: %i[show edit update destroy]
 
  def update
   if @company.update(company_params)
-    redirect_to company_path(@company) 
+    redirect_to company_path(@company)
   else
     render :edit
   end

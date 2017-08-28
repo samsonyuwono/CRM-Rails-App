@@ -21,9 +21,8 @@ class User < ApplicationRecord
   end
 
   def customers
-    @companies.where(customer: true)
+    companies.where(customer: true)
   end
-
 
 
 
