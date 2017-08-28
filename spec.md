@@ -22,7 +22,7 @@ Specs:
 - [x] Include at least one has_many through relationship - User has_many leads through companies
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [ ] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)- Nested form working but no custom attribute writer
 - [x] Include signup (how e.g. Devise)
 - [x] Include login (how e.g. Devise)
@@ -36,6 +36,6 @@ Figure out how to show only one form for edit
 README DO IT
 Confirm:
 - [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
+- [x] Limited logic in controllers
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
