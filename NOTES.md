@@ -14,12 +14,13 @@ Scope a Nested Attribute Form
 
 A lead form could have a select box that assigns a lead to the user who's managing the company's account
 
-8/25 EOD
+8/28 - 9/1 EOW
 
 - Make sure lead controllers are working
   - get edit lead to work
+  - make sure show page is working for leads
 
-- Get nested lead form to work
+- write custom attribute writer
 
 - Add reasonable validations
 

@@ -7,7 +7,6 @@ class CompaniesController < ApplicationController
 
  def new
    @company= Company.new
-  #  @company.leads.build
  end
 
  def create
@@ -34,7 +33,7 @@ class CompaniesController < ApplicationController
  def update
    if current_company
     @company.update(company_params)
-    redirect_to company_path
+    redirect_to company_lead_path
   end
  end
 

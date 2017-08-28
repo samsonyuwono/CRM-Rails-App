@@ -1,6 +1,7 @@
 class LeadsController < ApplicationController
     before_action :authenticate_user!
     before_action :current_company
+    before_action :current_lead
 
   def index
     @leads = Lead.all
@@ -21,15 +22,9 @@ class LeadsController < ApplicationController
   end
 
   def show
-    if current_lead
-      render :show
-    end
   end
 
   def edit
-    if current_lead
-      render :edit
-    end
   end
 
   def update
@@ -43,7 +38,7 @@ class LeadsController < ApplicationController
   def destroy
     if current_lead
       @lead.delete
-      redirect_to companies_path
+      redirect_to company_path(@company)
     end
   end
 
@@ -60,6 +55,7 @@ class LeadsController < ApplicationController
   def current_company
     @company= Company.find_by(id: params[:company_id])
   end
+
 
 
 end
