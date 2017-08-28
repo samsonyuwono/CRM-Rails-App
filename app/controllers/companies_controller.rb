@@ -15,7 +15,7 @@ before_action :current_company, only: %i[show edit update destroy]
    if @company.save
      redirect_to company_path(@company)
    else
-     render :new, notice: "All fields must be filled out"
+     render :new
    end
  end
 
@@ -27,7 +27,7 @@ before_action :current_company, only: %i[show edit update destroy]
 
  def update
   if @company.update(company_params)
-    redirect_to @company
+    redirect_to company_path(@company) 
   else
     render :edit
   end

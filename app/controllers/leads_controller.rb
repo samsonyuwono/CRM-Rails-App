@@ -11,7 +11,7 @@ class LeadsController < ApplicationController
     @lead = Lead.new(lead_params)
     @lead.company_ids= params[:company_id]
     if @lead.save
-      redirect_to company_path(@company)
+      redirect_to @company
     else
       render :new
     end
@@ -25,18 +25,15 @@ class LeadsController < ApplicationController
 
   def update
     if @lead.update(lead_params)
-      redirect_to company_path(@company)
+      redirect_to company_lead_path(@lead)
     else
       render :edit
     end
   end
 
   def destroy
-    if @lead.delete
-      redirect_to company_path(@company)
-    else
-      render :show
-    end
+    @lead.delete
+    redirect_to companies_path
   end
 
   private

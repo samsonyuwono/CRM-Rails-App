@@ -16,11 +16,7 @@ A lead form could have a select box that assigns a lead to the user who's managi
 
 8/28 - 9/1 EOW
 - create scope method
-
 - write custom attribute writer
+- Add seed
 
-- Add reasonable validations
-
-- Add validation errors
-
-Stretch
+- YIELD for Edit Company form

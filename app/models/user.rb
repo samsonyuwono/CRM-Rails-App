@@ -23,11 +23,4 @@ class User < ApplicationRecord
 
 
 
-  #   def total_revenue
-  #     @total= 0
-  #     self.company.each do |i|
-  #       @total += i.self.revenue
-  #   end
-  #   @total
-  # end
 end
