@@ -3,7 +3,7 @@
       <% if user_signed_in? %>
       <b>Signed in as <%=current_user.email%></b> |
       <b><%= link_to "My accounts/contacts", companies_path %> </b>|
-      <b> <%= link_to "Sign out", destroy_user_session_path, :method => "delete"%></b> |
-      <b>Top Seller(Link shows top seller- Most customers)</b>
+      <b> <%= link_to "Customers", customers_path  %></b>|
+      <b> <%= link_to "Sign out", destroy_user_session_path, :method => "delete"%></b>
       <% end %>
 </nav>

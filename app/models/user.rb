@@ -20,6 +20,11 @@ class User < ApplicationRecord
     end
   end
 
+  def customers
+    @companies.where(customer: true)
+  end
+
+
 
 
 

@@ -32,6 +32,8 @@ Specs:
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
 
+Figure out how to show only one form for edit
+README DO IT
 Confirm:
 - [ ] The application is pretty DRY
 - [ ] Limited logic in controllers
