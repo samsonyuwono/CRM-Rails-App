@@ -1,3 +1,16 @@
-<h3>Edit Company</h3>
+<h3>Edit <%= @company.name %></h3>
 
-<%= render 'form' %>
+<%= form_for @company do |f| %>
+ <%= f.hidden_field :user_id %>
+
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :revenue, "Revenue(in thousands):" %>
+  <%= f.number_field :revenue %><br />
+
+  Check this box for customer:<%= f.check_box :customer %><br><br />
+
+
+    <%= f.submit %>
+    <% end %>

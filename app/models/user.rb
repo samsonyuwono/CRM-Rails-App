@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
     validates :username, presence: true
     validates :email, presence: true
-    validates :password, length: {is: 8}, allow_blank: false
+    validates :password, length: {mininum: 6}, allow_blank: false
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

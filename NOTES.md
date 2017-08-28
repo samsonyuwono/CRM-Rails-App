@@ -15,9 +15,7 @@ Scope a Nested Attribute Form
 A lead form could have a select box that assigns a lead to the user who's managing the company's account
 
 8/28 - 9/1 EOW
-
-- Make sure lead controllers are working
-  - get edit lead to work
+- create scope method
 
 - write custom attribute writer
 
@@ -26,4 +24,3 @@ A lead form could have a select box that assigns a lead to the user who's managi
 - Add validation errors
 
 Stretch
-- create scope method

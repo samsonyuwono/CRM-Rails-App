@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
 before_action :authenticate_user!
-before_action :current_company, only: %i[show update destroy]
+before_action :current_company, only: %i[show edit update destroy]
 
   def index
    @companies = current_user.companies
@@ -12,7 +12,6 @@ before_action :current_company, only: %i[show update destroy]
 
  def create
    @company = User.find(current_user.id).companies.build(company_params)
-   binding.pry
    if @company.save
      redirect_to company_path(@company)
    else
@@ -24,7 +23,6 @@ before_action :current_company, only: %i[show update destroy]
  end
 
  def edit
-
  end
 
  def update
