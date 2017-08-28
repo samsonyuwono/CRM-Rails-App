@@ -3,7 +3,7 @@
 <ul>
   <% @companies.each do |c| %>
 <li> <b><%= link_to c.name, company_path(c) %></b> -
-  <%= link_to "Edit", edit_company_path(c)%>
+      <%= link_to "Edit", edit_company_path(c)%>
 </li>
   <%end%>
 </ul>

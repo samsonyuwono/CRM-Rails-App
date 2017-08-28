@@ -1,11 +1,7 @@
 class LeadsController < ApplicationController
     before_action :authenticate_user!
-    before_action :current_company
+    before_action :current_company, only: %i[new create]
     before_action :current_lead, only: %i[show edit update destroy]
-
-  def index
-    @leads = Lead.all
-  end
 
   def new
     @lead= @company.leads.build
@@ -13,7 +9,7 @@ class LeadsController < ApplicationController
 
   def create
     @lead = Lead.new(lead_params)
-    @lead.company_ids = params[:company_id]
+    @lead.company_ids= params[:company_id]
     if @lead.save
       redirect_to company_path(@company)
     else
