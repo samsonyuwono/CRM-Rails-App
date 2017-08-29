@@ -7,8 +7,13 @@ class Company < ApplicationRecord
   validates :revenue, numericality: { only_integer: true }
   validates :customer, inclusion: { in: [true, false] }
 
-  accepts_nested_attributes_for :leads
 
+  def leads_attributes=(leads_attributes)
+    leads_attributes.values.each do |lead_attribute|
+      lead = Lead.find_or_create_by(lead_attribute)
+      self.leads << lead
+    end
+  end
 
 
 
