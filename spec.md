@@ -23,7 +23,7 @@ Specs:
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-- [x] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)- Nested form working but no custom attribute writer
+- [x] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)-
 - [x] Include signup (how e.g. Devise)
 - [x] Include login (how e.g. Devise)
 - [x] Include logout (how e.g. Devise)
@@ -32,10 +32,9 @@ Specs:
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
 
-Figure out how to show only one form for edit
-README DO IT
+
 Confirm:
-- [ ] The application is pretty DRY
+- [X] The application is pretty DRY
 - [x] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] Views use helper methods if appropriate
+- [X] Views use partials if appropriate

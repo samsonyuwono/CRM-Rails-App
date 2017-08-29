@@ -2,12 +2,12 @@ class CompaniesController < ApplicationController
 before_action :authenticate_user!
 before_action :current_company, only: %i[show edit update destroy]
 
-  def index
+ def index
    @companies = current_user.companies
  end
 
  def new
-   @company= Company.new
+  @company= Company.new
  end
 
  def create
