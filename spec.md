@@ -7,13 +7,8 @@ A user will first log on or sign up for an account.
 
 From their home screen portal they keep track of the companies they are selling to. Each company has a lot of leads which a user can add or assign to.
 
-Through this app, users will be able to convert their leads into customers which will then contribute to their sales total.
+Through this app, users will be able to convert their leads into customers which will then contribute to their customer total.
 
-Ultimately, the goal of this is to see which user has had the highest revenue.
-
-Forms for- Create new user, lead, and company(maybe?)
-
-ActiveRecord Scope Method- Methods for User's with the highest revenue
 
 Specs:
 - [x] Using Ruby on Rails for the project

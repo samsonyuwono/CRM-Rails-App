@@ -12,5 +12,5 @@ On the navigation bar, the user can also find a link that will list all their cu
 git clone git@github.com:samsonyuwono/CRM-Rails-App.git
 cd CRM-Rails-App
 bundle install
-rails db:migrate
+rake db:migrate
 rails s
