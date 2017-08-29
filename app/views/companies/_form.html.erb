@@ -11,7 +11,7 @@
   <%= f.number_field :revenue %><br />
 
   Check this box for customer:<%= f.check_box :customer %><br><br />
-
+  <% if params[:action] =="new" || params[:action] == "create" %>
   <b>Create lead for Company</b> <br />
 
   <%= f.fields_for :leads, @company.leads.build do |i| %>
@@ -30,6 +30,6 @@
 
   <% end %>
 
-
+  <%end%>
   <%= f.submit %>
   <% end %>
