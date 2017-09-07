@@ -3,7 +3,7 @@ class Company < ApplicationRecord
   has_many :company_leads
   has_many :leads, through: :company_leads
 
-  validates :name, presence: true
+  validates_uniqueness_of :name, presence: true
   validates :revenue, numericality: { only_integer: true }
   validates :customer, inclusion: { in: [true, false] }
 
