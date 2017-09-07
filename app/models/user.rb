@@ -8,7 +8,6 @@ class User < ApplicationRecord
     has_many :companies
     has_many :leads, through: :company_leads
 
-
     validates :username, presence: true
     validates :email, presence: true
     validates :password, length: {mininum: 6}, allow_blank: false
