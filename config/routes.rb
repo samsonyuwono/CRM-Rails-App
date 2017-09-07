@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :leads, only: [:new, :create, :show, :edit, :update, :destroy]
   end
 
+  resources :leads
 
   root 'static#home', as: 'home'
   get 'customers', to: 'static#customers'

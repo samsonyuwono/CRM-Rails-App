@@ -16,7 +16,6 @@ end
 
 def oauthUser?(current_user)
   if current_user.provider != nil
-    true
   end
 end
 
