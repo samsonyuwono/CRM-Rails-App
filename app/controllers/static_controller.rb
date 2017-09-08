@@ -8,4 +8,10 @@ class StaticController < ApplicationController
     @customers= current_user.customers
   end
 
+  def dashboard
+   @total_revenue = current_user.total_revenue
+   @total_contacts= current_user.total_contacts
+ end
+
+
 end
