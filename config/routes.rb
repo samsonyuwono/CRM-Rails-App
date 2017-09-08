@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   root 'static#home', as: 'home'
   get 'customers', to: 'static#customers'
+  get 'dashboard', to: 'static#dashboard'
 
 end

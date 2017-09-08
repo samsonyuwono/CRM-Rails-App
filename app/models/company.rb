@@ -16,6 +16,4 @@ class Company < ApplicationRecord
   end
 
 
-
-
 end

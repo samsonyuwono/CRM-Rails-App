@@ -6,6 +6,7 @@ class User < ApplicationRecord
           :omniauthable, :omniauth_providers => [:facebook]
 
     has_many :companies
+    has_many :company_leads
     has_many :leads, through: :company_leads
 
     validates :username, presence: true
@@ -21,6 +22,26 @@ class User < ApplicationRecord
 
   def customers
     companies.where(customer: true)
+  end
+
+  def total_revenue
+    total= 0
+    companies.each do |company|
+      total+= company.revenue
+    end
+    total
+  end
+
+  def total_contacts
+    counter = []
+    companies.each do |company|
+      company.leads.each do |lead|
+        if lead.contact == true
+          counter << lead.contact
+          end
+        end
+      end
+    counter.count
   end
 
 
