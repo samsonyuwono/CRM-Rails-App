@@ -46,7 +46,17 @@ class User < ApplicationRecord
   end
 
   def total_leads
+    counter = []
+    companies.each do |company|
+      company.leads.each do |lead|
+        if lead.id > 0
+        counter << lead.id
+        end
+      end
+    end
+    counter.count
   end
+  # c.find(50).leads
 
   def total_accounts
     counter = []
