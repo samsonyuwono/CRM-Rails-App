@@ -45,7 +45,16 @@ class User < ApplicationRecord
     counter.count
   end
 
+  def total_leads
+  end
 
+  def total_accounts
+    counter = []
+    companies.each do |company|
+      counter << company
+    end
+    counter.count
+  end
 
 
 

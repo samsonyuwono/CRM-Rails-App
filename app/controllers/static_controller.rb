@@ -11,6 +11,7 @@ class StaticController < ApplicationController
   def dashboard
    @total_revenue = current_user.total_revenue
    @total_contacts= current_user.total_contacts
+   @total_accounts = current_user.total_accounts
  end
 
 
